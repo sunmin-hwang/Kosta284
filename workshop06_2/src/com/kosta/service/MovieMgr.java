@@ -46,15 +46,14 @@ public class MovieMgr {
 		for(int i=0; i<index ; i++) {
 			if(movies[i].getDirector().contains(name)) size++; //2
 		}//
-		Movie[] nMovies = new Movie[size];
 		
-		for(Movie m : movies) {
-			if(m==null) break;
-			if(m.getTitle().contains(name)) {
-				nMovies[size++]=m;
-			}
+		Movie[] nMovies = new Movie[size];
+		for(int i=0; i<index; i++) {
+			if(movies[i].getDirector().contains(name)) 
+				nMovies[--size] = movies[i]; //뒤에서 앞으로 입력된다.
+			
 		}
-		return null;
+		return nMovies;
 	}
 
 	public Movie[] searchGenre(String genre) {
