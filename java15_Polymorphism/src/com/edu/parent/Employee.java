@@ -19,7 +19,35 @@ public class Employee {
 		this.birthDate = birthDate;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public MyDate getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(MyDate birthDate) {
+		this.birthDate = birthDate;
+	}
+
 	public String getDetails() {
 		return name + ", " + salary + ", " + birthDate.getDate();
+	}
+	
+	public String toString() {
+		return name + ", " + salary + ", " + birthDate;
 	}
 }

@@ -20,5 +20,8 @@ public class MyDate {
 		return year + "-" + month + "-" + day;
 	}
 	
+	public String toString() {
+		return year + "-" + month + "-" + day;
+	}
 	
 }
