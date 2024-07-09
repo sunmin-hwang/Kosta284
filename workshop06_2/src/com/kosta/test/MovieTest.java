@@ -8,6 +8,7 @@ import com.kosta.vo.Movie;
 
 public class MovieTest {
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		System.out.println("<<영화 관리 프로그램>>");
 		//getInstance()로 MovieMgr 객체 받아옴..

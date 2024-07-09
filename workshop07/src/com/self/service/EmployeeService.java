@@ -20,7 +20,7 @@ public class EmployeeService {
 	}
 	
 	public void addEmployee(Employee emp) {	
-		emps[eidx++] = emp;
+		if(eidx < emps.length) emps[eidx++] = emp;
 	}
 
 	

@@ -3,8 +3,10 @@ import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics;
 
+@SuppressWarnings("serial")
 public class DrawShape extends Frame{
 	public static void main(String[] args) {		
+		@SuppressWarnings("unused")
 		DrawShape win = new DrawShape("도형 그리기");
 	}	
 	public void paint(Graphics g){

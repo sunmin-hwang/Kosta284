@@ -22,7 +22,7 @@ public class Engineer extends Employee{
 	//Method Overriding(메소드 재정의)
 	@Override
 	public String getDetails() {
-		return super.getDetails() + ", tech : " + tect;
+		return super.getDetails() + ", tech : " + tect + ", bonus :" + bonus;
 	}
 	
 }

@@ -26,6 +26,7 @@ public class PolyTest1 {
 		//부모타입으로 다양한 자식개체 생성.....1) Object Casting  2) Virtual Method Invocation
 		Employee m2 = new Manager("James", 30000.0, new MyDate(1999, 1, 1), "IT");
 		Employee eg2 = new Engineer("Tomas", 45000.0, new MyDate(1997, 3, 1 ), "Java", 100);
+		@SuppressWarnings("unused")
 		Employee s2 = new Secretary("Peter", 35000.0, new MyDate(2000, 4, 3), "James");
 		
 		//Manager타입으로 불러서 값 할당...Object Casting
