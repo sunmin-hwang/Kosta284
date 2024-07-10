@@ -1,6 +1,6 @@
 package com.edu.vo;
 //Super Class...
-public class Employee {
+abstract/*코드의 가독력이 올라간다. 단, 객체생성 불가*/ public class Employee {
 	private int empId;
 	private String name;
 	private String addr;
