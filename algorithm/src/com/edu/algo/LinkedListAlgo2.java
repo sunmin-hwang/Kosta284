@@ -1,34 +1,64 @@
 package com.edu.algo;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
 
 public class LinkedListAlgo2 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
 		
-		List<String> list = new LinkedList<String>();
-		String str = sc.next();
-		for(int i = 0 ; i < str.length() ; i++) {
-			list.add(str.substring(i, i+1));
-		}
-		int cusur = str.length();
-		int m = sc.nextInt();
+		LinkedList<String> left = new LinkedList<String>();
+		LinkedList<String> right = new LinkedList<String>();
+		
+		int m = Integer.parseInt(br.readLine());
+		
 		for(int i = 0 ; i < m ; i++) {
-			String s = sc.next();
-			if(s.equals("P")) {
-				String ch = sc.next();
-				list.add(cusur++, ch);
-			}else if (s.equals("L")) {
-				if(cusur!=0) cusur--;
-			}else if (s.equals("D")) {
-				if(cusur!=list.size()) cusur++;
-			}else if (s.equals("B")) {
-				if(cusur!=0) list.remove(--cusur);
+			String str = br.readLine();
+			for(int j = 0 ; j < str.length() ; j++) {
+				switch (str.substring(j, j+1)) {
+				    case ">" : {
+					    if(right.size() != 0) {
+					    	if(right.getFirst().equals("\n")) {
+					    		left.add(right.remove());
+					    	}
+					    	left.add(right.remove());
+					    }
+					    break;
+				    } case "<" : {
+				    	if(left.size() != 0) {
+				    		if(left.getLast().equals("\n")) {
+				    			right.add(left.remove());
+					    	}
+				    		right.addFirst(left.removeLast());
+				    	}
+					    break;
+				    } case "-" : {
+				    	if(left.getLast().equals("\n")) {
+			    			right.add(left.remove());
+				    	}
+					    if(left.size() != 0) left.removeLast();
+					    break;
+				    }
+				    default:
+					    left.add(str.substring(j, j+1));
+				}
+			}
+			if(right.size() == 0) {
+				left.add("\n");
+			}else {
+				left.add(" ");
 			}
 		}
-		for(int i = 0 ; i < list.size() ; i++)
-		System.out.print(list.get(i));
+		
+		while(!left.isEmpty()) {
+			sb.append(left.remove());
+		}
+		while(!right.isEmpty()) {
+			sb.append(right.remove());
+		}
+		System.out.print(sb);
 	}
 }
