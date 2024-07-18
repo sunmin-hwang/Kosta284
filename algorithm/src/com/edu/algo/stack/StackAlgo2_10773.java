@@ -20,7 +20,7 @@ public class StackAlgo2_10773 {
 					st.pop();
 					break;
 				}default:{
-					st.add(x);
+					st.push(x);
 				}
 			}
 		}

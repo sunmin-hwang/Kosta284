@@ -36,7 +36,7 @@ public class StackAlgo1_10828 {
 					break;
 				}default:{
 					int n = Integer.parseInt(x.split(" ")[1]);
-					st.add(n);
+					st.push(n);
 				}
 			}
 		}

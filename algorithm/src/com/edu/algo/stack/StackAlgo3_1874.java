@@ -17,7 +17,7 @@ public class StackAlgo3_1874 {
 		for(int i = 1 ; i <= num ; i++) {
 			int x = Integer.parseInt(br.readLine());
 			for(int j = idx ; j <= x ; j++) {
-				st.add(j);
+				st.push(j);
 				idx++;
 				sb.append("+\n");
 			}
