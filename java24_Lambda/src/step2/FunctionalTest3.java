@@ -56,6 +56,6 @@ public class FunctionalTest3 {
 		}
 		
 		System.out.println("\n5. Map에 있는 모든 key, value값을 출력 ===> forEach()");
-		map.forEach((key, value) -> System.out.println("key : " + key + ", " + "value : " + value + " "));;
+		map.forEach((key, value) -> System.out.println("key : " + key + ", " + "value : " + value + " "));
 	}
 }
