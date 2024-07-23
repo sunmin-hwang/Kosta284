@@ -5,6 +5,7 @@ package step1;
     
     @FunctionalInterface
     
+    0) 매개변수 x, 반환타입 x
     1) 매개변수 o, 반환타입 x
     2) 매개변수 x, 반환타입 o
     3) 매개변수 o, 반환타입 o
