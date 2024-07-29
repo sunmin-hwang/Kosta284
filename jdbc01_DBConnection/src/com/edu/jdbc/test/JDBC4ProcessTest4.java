@@ -53,12 +53,15 @@ public class JDBC4ProcessTest4 {
 		try {
 			Properties p = new Properties();
 			p.load(new FileInputStream("src/config/db.properties"));
+			p.load(new FileInputStream("src/sql/custom.properties"));
 			
 			driver = p.getProperty("jdbc.mysql.driver");
 			url = p.getProperty("jdbc.mysql.url");
 			user = p.getProperty("jdbc.mysql.user");
 			pass = p.getProperty("jdbc.mysql.pass");
 			query = p.getProperty("jdbc.sql.selectAll");
+			
+			System.out.println(p);
 		} catch (Exception e) {
 			System.out.println("드라이버 로딩 실패...");
 		}
