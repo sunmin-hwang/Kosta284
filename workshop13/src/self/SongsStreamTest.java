@@ -47,6 +47,14 @@ public class SongsStreamTest {
 		System.out.println("\n==================== 4. ===================\n");
 		Song song = songs.stream().filter(i->i.getYear()==1995).sorted().findFirst().get();
 		System.out.println(song);
+		
+		System.out.println("\n==================== 4. ===================\n");
+		Song song1995 = songs.stream().filter(i->i.getYear()==1995).sorted().findFirst().orElseThrow(RuntimeException::new);
+		System.out.println(song1995);
+		
+		System.out.println("\n==================== 4. ===================\n");
+		List<Song> firstSong = songs.stream().filter(i->i.getYear()==1995).limit(1).collect(Collectors.toList());
+		System.out.println(song1995);
 	}
 }
 
