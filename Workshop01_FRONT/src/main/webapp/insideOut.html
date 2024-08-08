@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>InsideOut</title>
+<style type="text/css">
+	#inside{
+		width: 700px;
+		height: 850px;
+		border: 4px solid;
+		border-color: rgb(230, 30, 141);
+		margin: auto;
+	}
+	
+	h2{
+		margin-left: 25%;
+		font-size: 25px;
+	}
+	
+	img{
+		margin: auto;
+		margin-left: 27%;
+		width: 300px;
+		height: 350px;
+		padding: 10px;
+	}
+	
+	#frm{
+		padding: 20px;
+	}
+	
+	#form {
+		border: hidden;
+		margin: auto;
+		margin-left: 5%;
+	}
+	
+	#nine{
+		text-decoration: line-through;
+	}
+	
+	#fifth{
+		text-decoration: underline;
+	}
+	
+	#option, #time{
+		border: 2px solid;
+		border-color: rgb(217,217,217);
+		margin: auto;
+	}
+	
+	#option{
+		height: 30px;
+	}
+	
+	#time{
+		height: 40px;
+	}
+	
+	
+</style>
+</head>
+<body>
+<div id="inside">
+	<h2>★★★★인사이드 아웃2★★★★</h2>
+	<img alt="insideOut2" src="./image/inside.jpg">
+	<form action="#" id="frm">
+		<fieldset id="form">
+			상영관<select id="location" name="location">
+				<option value="cgv">CGV</option>
+				<option value="mega">메가박스</option>
+				<option value="lotte">롯데시네마</option>
+			</select>
+			날짜 선택<input type="date" name="date" id="date">
+			<br>
+			
+			<fieldset id="time">
+			<legend>시간선택</legend>
+				<input type="radio" name="time" value="08:30" checked="checked">08:30
+				<input type="radio" name="time" value="11:00">11:00
+				<input type="radio" name="time" value="14:20">14:20
+				<input type="radio" name="time" value="17:25">17:25
+				<input type="radio" name="time" value="20:10">20:10
+				<input type="radio" name="time" value="23:05">23:05	
+			</fieldset>
+			<br>
+			요금 &nbsp<span id="nine">&#8361;9,000</span>&nbsp&nbsp <span id="fifth">&#8361;5,000</span>
+			<br><br>
+			인원&nbsp<input type="number" id="people" name="people" value="0">
+			<br><br>
+			금액&nbsp<input type="number" id="money" name="money" value="0" readonly="readonly">
+			<br><br>
+			<input type="checkbox" name="option" value="option" checked="checked"> 옵션
+			<br><br>
+			<fieldset id="option">
+				<input type="checkbox" name="option" value="popcorn">팝콘
+				<input type="checkbox" name="option" value="coke">콜라
+			</fieldset>
+		</fieldset>
+	</form>
+</div>
+</body>
+</html>
