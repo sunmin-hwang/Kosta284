@@ -6,7 +6,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
 
+	body{
+			margin: 0px;		
+		height: 800px;
+	}
+
+	.header{
+		text-align: center;
+		background: rgb(240, 240, 240);
+		height: 160px;
+	}
+	
+	.header>h1{
+		padding: 30px; 
+	}
+	
+	.topnav{
+		overflow: hidden;
+		background: black;
+	}
+	
+	.topnav>a{
+		float: left;
+		text-decoration: none;
+		margin: 22px;
+		color: white;
+	}
+	
+	
+	.row{
+		overflow: hidden;
+	}
+	
+	.row>.column{
+		display: inline-block;
+		width: 33%;
+	}
+	
+	.row>.column>h2,.row>.column>p{
+		margin: 20px;
+	}
+	
+	.footer{
+		width: 33%;
+		height: 100px;
+		background: rgb(240, 240, 240);
+		text-align: center;
+		margin: auto;
+		margin-top: 355px;
+		line-height: 100px;
+	}
 </style>
 </head>
 <body>
