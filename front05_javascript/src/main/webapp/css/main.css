@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.alert-box{
+	background: tomato;
+	color: #400000;
+	padding:20px;
+	border-radius: 5px;
+	display: none;/*   숨기기 */
+}
