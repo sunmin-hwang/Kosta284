@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>addClass() : jQuery 문법과 css스타일 문법을 분리시킨다</title>
+    <style type="text/css">
+      .colorL {
+        color: lavender;
+      }
+      .colorT {
+        color: tomato;
+      }
+      .colorG {
+        color: green;
+      }
+      .backgroundG {
+        background: gray;
+      }
+      .colorB {
+        color: blue;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(() => {
+        // = $(document).ready = jQuery(document).ready
+        alert("ready");
+        //1. id값이 header 인 태그의 직계자식 태그인 span을 선택자로 지정
+        $("#header>span").html("JQuery select tester").addClass("colorL");
+        //2. button을 선택자로 지정하고, 버튼을 클릭하면 함수 호출
+        $("button").click(() => {
+          //3. p, h2 태그 영역 모두를 선택자로 지정하고, 글자색을 green으로 설정
+          $("p, h2").addClass("colorG");
+          //4. h2의 직계자식은 태그 span 영역 배경색을 gray
+          $("h2>span").addClass("backgroundG");
+          //5. 첫번째 p 태그에만 속성 지정
+          $("p").first().html("첫번째 문장").removeClass("colorG");
+          $("p").first().html("첫번째 문장").addClass("colorT");
+          // $("p:first").html("첫번째 문장").css("color", "tomato");
+          // $("p:eq(1)").html("두번째 문장");
+          $("p").last().html("마지막 문장").removeClass("colorG");
+          $("p").last().html("마지막 문장").addClass("colorT");
+          //6. 버튼을 더이상 보이지 않게..
+          $("button").css("display", "none");
+          $("p, h2").css("text-align", "center");
+          //7. 클래스 속성의 값이 theme인 선택자를 지정한 후, 경계선을 지정
+          $(".theme").css("border", "2px solid gray");
+        }); //click
+      });
+    </script>
+  </head>
+  <body>
+    <h2 id="header">
+      <span>This is a heading</span>
+    </h2>
+    <p>This is a paragraph.</p>
+    <p class="content">This is another paragraph1.</p>
+    <p class="content theme">This is another paragraph2.</p>
+    <button>Click me to hide paragraphs</button>
+    <b>이 부분은 bold 하게 출력됩니다.</b>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

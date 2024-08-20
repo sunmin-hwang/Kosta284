@@ -18,12 +18,14 @@
 			$('h2>span').css('background', 'gray');
 			
 			//5. 첫번째 p태그를 선택자로 지정...내용을 첫번째 문장입니다로 변경
-			//$('p').first().html('첫번째 문장입니다').css('color', 'blue');
-			//$('p:first').html('첫번째 문장입니다').css('color', 'blue');
-			$('p:eq(0)').html('첫번째 문장입니다').css('color', 'blue');
+			//html()은 자바스크립트에서 innerHTML과 동일한 기능..
+			//val()은 자바스크립트에서 value와 동일한 기능..
+			//text()와 html()은 태그를 먹냐 안먹냐 차이
+			//$('p:eq(0)').html('첫번째 문장입니다').css('color', 'blue');
+			//$('p:eq(0)').val('첫번째 문장입니다').css('color', 'blue');//안됨
+			$('p:eq(0)').text('<h2>첫번째 문장입니다</h2>').css('color', 'blue');
 			
-			//$('p').last().html('마지막 문장입니다').css('color', 'purple');
-			$('p:last').html('마지막 문장입니다').css('color', 'purple');
+			$('p:last').html('<h2>마지막 문장입니다</h2>').css('color', 'purple');
 			
 			//6. 버튼을 더이상 보이지 않게...
 			$('button').css('display', 'none');
