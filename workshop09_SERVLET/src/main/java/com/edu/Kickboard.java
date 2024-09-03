@@ -16,24 +16,44 @@ public class Kickboard {
 			//구현 하세요
 			BufferedReader br = new BufferedReader(new FileReader(path));
 			StringTokenizer st = new StringTokenizer(br.readLine());
-			int h = Integer.parseInt(st.nextToken());
-			int w = Integer.parseInt(st.nextToken());
+			M = Integer.parseInt(st.nextToken());
+			N = Integer.parseInt(st.nextToken());
 			
-			map = new int[h][w];
-			visited = new boolean[h][w];
+			map = new int[M][N];
+			visited = new boolean[M][N];
 			
-			for(int i = 0; i < h; i++) {
+			for(int i = 0; i < M; i++) {
 				st = new StringTokenizer(br.readLine());
-				for(int j = 0; j < w; j++) {
+				for(int j = 0; j < N; j++) {
 					map[i][j] = Integer.parseInt(st.nextToken());
 				}
 			}
 			br.close();
-			return 0;
+			return dfs(0,0,0);
 		}
 		
-		public static void dfs() {
+		static int dfs(int m, int n, int sum) {
+			if(m==M-1&&n==N-1) {
+				return ++sum;
+			}
 			
+			int[] a = new int[] {0, 1, 0, -1};
+			int[] b = new int[] {1, 0, -1, 0};
+			
+			for(int i = 0; i < 4; i++) {
+				int m2 = m + a[i];
+				int n2 = n +b[i];
+				if(m2<0||m2>=M||n2<0||n2>=N) continue;
+				if(!visited[m2][n2]) {
+					if(map[m2][n2]<map[m][n]) {
+						visited[m2][n2] = true;
+						sum = dfs(m2,n2, sum);
+						visited[m2][n2] = false;
+					}
+				}
+			}
+			
+			return sum;
 		}
 		
 		public static void main(String[] args) throws IOException {
