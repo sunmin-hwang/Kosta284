@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Accordion - Default functionality</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/excite-bike/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+    	/*컨텐트에 맞게 아코디언의 높이를 조절하는 옵션*/
+    	heightStyle:'content'
+    });
+    
+    $('#accordion h3').on('click', function() {
+    	let text = $(this).text(); 
+		//alert(text);
+		if(text=="Full Stack Subjects"){
+			$.ajax({
+				type: 'post',
+				url: 'front.do?command=subject',
+				
+				success: function(result) {
+					$('#subjects').html(result)
+				}
+			});
+		} else if(text=="Association Global IT Company"){
+			$.ajax({
+				type: 'post',
+				url: 'front.do?command=company',
+				
+				success: function(result) {
+					$('#company').html(result)
+				}
+			});
+		}
+	});
+    
+    $('#creation').on('click', function() {
+		let footer = '<h3>The way get to Kosta</h3><div>(종로교육센터) 서울특별시 종로구 우정국로 2길 21 대왕빌딩 7층</div>';
+		//동적으로 아코디언 만들때는 'destroy'옵션으로 이전 어코디언을 완전히 삭제한 후에 다시 어코디언을 생성
+		$(this).remove();
+		$('#accordion').append(footer).accordion('destroy').accordion({
+	    	heightStyle:'content'
+	    });;
+	})
+  } );
+  </script>
+</head>
+<body>
+ <h2 align="center">KOSTA EDUCATION</h2>
+<div id="accordion">
+  <h3>Kosta Education Introduction</h3>
+  <div>
+  	강의 정보
+	
+	훈련 일수
+	
+	2일
+	
+	훈련 시간
+	
+	16시간
+	
+	교육목표
+	
+	방대해진 웹서비스의 서버의 처리속도와 HTML의 양에 따른 유지 및 관리를 React가 제시하고 있는 기능에 따라 고급 자바스크립트 기술을 교육함.
+	
+	강의 소개
+	
+	회차 안내
+	
+	과정 소개
+	
+	수강대상
+	
+	
+	
+	가. 프론트 앤드 개발에 입문하는 웹 개발자
+	
+	나. JavaScript 가능자
+	
+	
+	
+	
+	
+	커리큘럼
+	
+	
+	
+	1일차.
+	
+	가. ReactJS 소개 및 컴포넌트 간의 데이터 전달하기
+	
+	 - JSX 및 ES6 소개
+	
+	 - React 컴포넌트 소개
+	
+	 - JSX의 문법과 특징
+	
+	 - 컴포넌트 간의 통신 : props와 state 
+	
+	
+	
+	나. ReactJS에서 Redux 사용하기
+	
+	 - Redux 특징과 흐름 이해
+	
+	 - Redux 프로젝트 구조 및 컴포넌트 생성
+	
+	 - Redux의 Action과Reducer 와 Store 컴포넌트의 이해
+	
+	
+	
+	 다. Redux에서 Axios 를 사용한 Ajax 통신
+	
+	 - Axios와 Redux-thunk 라이브러리 소개
+	
+	 - Express 서버와 Http 통신하기
+	
+	 - Http클라이언트 작성을 위해 axios 와 redux-thunk 의 사용
+	
+	
+	
+	 라. ReactJS의 Router 사용하기
+	
+	 - SPA(Single Page Application) 패러다임
+	
+	 - React Router
+	
+	 - Route와 파라미터 
+	
+	
+	
+	
+	
+	과정진행 Tool /Infra
+	
+	
+	
+	1. NodeJS 18+ 
+	
+	2. Visual Studio Code
+	
+	
+	
+	
+	
+	실습내용(요약)
+	
+	
+	
+	1. Visual Studio Code 기반에서 컴포넌트 간의 데이터 전달하기 실습 진행
+	
+	2.  RTK(Redux Toolkit) 사용하는 실습 진행
+	
+	3. Redux에서 Axios와 Redux-thunk 를 사용한 Ajax 통신
+	
+	4. CRA 기반 Todo 어플리케이션 작성하는 실습 진행
+	
+	
+	
+	
+	
+	선수과정
+	
+	[JavaScript ECMA6]
+	
+	
+	
+	후수과정
+	
+	
+	
+	[ React Form 과 RTK Query 활용 과정]
+	
+	[TypeScript기반 ReactJS 개발하기]
+	
+	* 클릭 시 과정 페이지로 이동
+  </div>
+  
+  <h3>Full Stack Subjects</h3>
+  <div id="subjects">
+  
+  </div>
+  
+  <h3>Association Global IT Company</h3>
+  <div id="company">
+  
+  </div>
+  
+</div>
+
+  <hr>
+  <input type="button" value="Creation Accordion Section" id="creation">
+ 
+</body></html>
