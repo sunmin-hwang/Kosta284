@@ -4,6 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Insert title here</title>
     <style>
         h1 {
@@ -67,7 +68,19 @@
         #right-content p {
             margin: 40px;
         }
-    </style>    
+    </style>
+    <script type="text/javascript">
+    	$(()=>{
+    		$('[name=cartinsert]').on('click', function() {
+    			if(localStorage.getItem("cartList" + $(this).attr('id'))!=null){
+    				alert('이미 담겨진 상품입니다.');
+    			}else{
+					localStorage.setItem("cartList" + $(this).attr('id'), $(this).val());    				
+					alert("장바구니에 담겨졌습니다.");
+    			}
+			})
+    	});
+    </script>   
 </head>
 <body>
 	<h1> ★ ${item.name} 의 정보</h1>
