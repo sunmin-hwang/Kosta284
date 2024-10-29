@@ -1,0 +1,19 @@
+.movie{
+    width: 40%;
+    height: 800px;
+    margin: auto;
+    text-align: center;
+    border: 1px solid;
+}
+
+.content{
+    color: blueviolet;
+}
+
+.movieImg{
+    width: 70%;
+    height: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+    display: block;
+}

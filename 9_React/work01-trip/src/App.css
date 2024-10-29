@@ -1,0 +1,28 @@
+header{
+  margin-left: 200px;
+}
+
+nav{
+  margin-left: 300px;
+}
+
+article{
+  margin-left: 200px;
+}
+
+li{
+  margin-left: 0;
+}
+
+.imgLayer{
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.img{
+  width: 200px;
+  height: 200px;
+  border: 4px solid blue;
+  border-radius: 10px;
+}
