@@ -3,12 +3,9 @@ import styled from 'styled-components';
 
 const StyledHeader = styled.div`
     border: 1px solid black;
-    height: 50px;
-    display: flex;
-    justify-content: space-around;
     width: 800px;
     margin: auto;
-    list-style: none;
+    margin-top: 50px;
     padding-top: 20px;
 `
 
@@ -17,9 +14,7 @@ const Header = (props) => {
         <div>
             <h3>{props.id}</h3>
             <StyledHeader>
-                <li>Home</li>
-                <li>Sign Up</li>
-                <li>sign In</li>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             </StyledHeader>
         </div>
     );
